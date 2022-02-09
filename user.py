@@ -1,6 +1,6 @@
 # import the function that will return an instance of a connection
 from mysqlconnection import connectToMySQL
-# model the class after the friend table from our database
+# model the class after the users table from our database
 class User:
     def __init__( self , data ):
         self.id = data['id']
@@ -10,6 +10,7 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
     # Now we use class methods to query our database
+    
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
